@@ -13,23 +13,58 @@ body {
     margin: auto;
 }
 
+.accordion:hover .mem_name {
+    color: black;
+}
+
+.accordion:hover .cross {
+    opacity: 1;
+} 
+
+.accordion_row {
+    cursor: pointer;
+}
+
+.accordion_row:hover .accordion_content {
+    height: 100%;
+}
+
+.accordion_row:hover .cross {
+    transform: rotate(-45deg);
+}
+
 .accordion_row input {
     display: none;
+}
+
+.name_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cross {
+    display: block;
+    height: 1.5em;
+    align-self: center;
+    opacity: 0;
 }
 
 .accordion_content {
     display: flex;
     justify-content: center;
     height: 0.01vw;
-    cursor: pointer;
 }
 
 .accordion_row input:checked ~ .accordion_content {
     height: 100%;
 }
 
-.accordion_row input:checked ~ .mem_name {
+.accordion_row input:checked ~ .name_container .mem_name {
     color: black;
+}
+
+.accordion_row input:checked ~ .name_container .cross {
+    transform: rotate(-45deg)
 }
 
 .mem_name {
