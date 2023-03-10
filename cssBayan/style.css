@@ -1,0 +1,21 @@
+body {
+    max-width: 1920px;
+    background-color:azure;
+}
+
+.accordion {
+    width: 70%;
+    margin: auto;
+}
+
+.accordion_row input {
+    display: none;
+}
+
+.accordion_content {
+    display: none;
+}
+
+.accordion_row input:checked ~ .accordion_content {
+    display: block;
+}
