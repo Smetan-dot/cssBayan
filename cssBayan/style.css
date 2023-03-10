@@ -1,5 +1,10 @@
+@font-face {
+    font-family: DaysOne;
+    src: url(DaysOne-Regular.ttf);
+}
+
 body {
-    max-width: 1920px;
+    font-family: DaysOne;
     background-color:azure;
 }
 
@@ -13,9 +18,25 @@ body {
 }
 
 .accordion_content {
-    display: none;
+    display: flex;
+    justify-content: center;
+    height: 0.01vw;
+    cursor: pointer;
 }
 
 .accordion_row input:checked ~ .accordion_content {
-    display: block;
+    height: 100%;
+}
+
+.accordion_row input:checked ~ .mem_name {
+    color: black;
+}
+
+.mem_name {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 2.5em;
+    color: blue;
+    border-top: 0.1em solid rgb(168, 161, 161);
+    cursor: pointer;
 }
