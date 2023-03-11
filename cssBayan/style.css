@@ -9,7 +9,7 @@ body {
 }
 
 .accordion {
-    width: 70%;
+    width: 80%;
     margin: auto;
 }
 
@@ -19,18 +19,11 @@ body {
 
 .accordion:hover .cross {
     opacity: 1;
+    transition: 0.5s;
 } 
 
 .accordion_row {
     cursor: pointer;
-}
-
-.accordion_row:hover .accordion_content {
-    height: 100%;
-}
-
-.accordion_row:hover .cross {
-    transform: rotate(-45deg);
 }
 
 .accordion_row input {
@@ -40,6 +33,7 @@ body {
 .name_container {
     display: flex;
     justify-content: space-between;
+    border-top: 0.1em solid rgb(168, 161, 161);
 }
 
 .cross {
@@ -53,10 +47,13 @@ body {
     display: flex;
     justify-content: center;
     height: 0.01vw;
+    opacity: 0;
 }
 
 .accordion_row input:checked ~ .accordion_content {
     height: 100%;
+    opacity: 1;
+    transition: 0.5s;
 }
 
 .accordion_row input:checked ~ .name_container .mem_name {
@@ -64,7 +61,8 @@ body {
 }
 
 .accordion_row input:checked ~ .name_container .cross {
-    transform: rotate(-45deg)
+    transform: rotate(-45deg);
+    transition: 0.5s;
 }
 
 .mem_name {
@@ -72,6 +70,45 @@ body {
     font-weight: bold;
     line-height: 2.5em;
     color: blue;
-    border-top: 0.1em solid rgb(168, 161, 161);
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.mem {
+    min-width: 10em;
+}
+
+@media screen and (min-width: 821px) {
+    .accordion_row:hover .accordion_content {
+        height: 100%;
+        opacity: 1;
+        transition: 0.5s;
+    }
+    
+    .accordion_row:hover .cross {
+        transform: rotate(-45deg);
+        transition: 0.5s;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .mem_name {
+        font-size: 1.25em;
+    }
+
+    .cross {
+        width: 1.25em;
+        height: 1.25em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .mem_name {
+        font-size: 1em;
+    }
+
+    .cross {
+        width: 1em;
+        height: 1em;
+    }
 }
