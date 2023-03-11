@@ -13,15 +13,6 @@ body {
     margin: auto;
 }
 
-.accordion:hover .mem_name {
-    color: black;
-}
-
-.accordion:hover .cross {
-    opacity: 1;
-    transition: 0.5s;
-} 
-
 .accordion_row {
     cursor: pointer;
 }
@@ -40,7 +31,7 @@ body {
     display: block;
     height: 1.5em;
     align-self: center;
-    opacity: 0;
+    opacity: 1;
 }
 
 .accordion_content {
@@ -62,6 +53,15 @@ body {
 .accordion_row input:checked ~ .name_container .cross {
     transform: rotate(-45deg);
     transition: 0.5s;
+}
+
+.accordion_row input:active ~ .name_container .mem_name {
+    color: blue;
+    transition: 0.1s;
+}
+
+.accordion_row input:active ~ .accordion_content .mem {
+    opacity: 0.5;
 }
 
 .mem_name {
@@ -86,6 +86,30 @@ body {
     .accordion_row:hover .cross {
         transform: rotate(-45deg);
         transition: 0.5s;
+    }
+
+    .accordion:hover .mem_name {
+        color: black;
+    }
+    
+    .accordion:hover .cross {
+        opacity: 1;
+        transition: 0.5s;
+    } 
+
+    .cross {
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .mem_name {
+        font-size: 1.75em;
+    }
+
+    .cross {
+        width: 1.75em;
+        height: 1.75em;
     }
 }
 
