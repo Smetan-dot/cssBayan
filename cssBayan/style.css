@@ -1,0 +1,136 @@
+@font-face {
+    font-family: DaysOne;
+    src: url(DaysOne-Regular.ttf);
+}
+
+body {
+    font-family: DaysOne;
+    background-color:azure;
+}
+
+.accordion {
+    width: 80%;
+    margin: auto;
+}
+
+.accordion_row {
+    cursor: pointer;
+}
+
+.accordion_row input {
+    display: none;
+}
+
+.name_container {
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.1em solid rgb(168, 161, 161);
+}
+
+.cross {
+    display: block;
+    height: 1.5em;
+    align-self: center;
+    opacity: 1;
+}
+
+.accordion_content {
+    display: flex;
+    justify-content: center;
+    max-height: 0em;
+    transition: 0.5s;
+}
+
+.accordion_row input:checked ~ .accordion_content {
+    max-height: 23em;
+    transition: 0.5s;
+}
+
+.accordion_row input:checked ~ .name_container .mem_name {
+    color: black;
+}
+
+.accordion_row input:checked ~ .name_container .cross {
+    transform: rotate(-45deg);
+    transition: 0.5s;
+}
+
+.accordion_row input:active ~ .name_container .mem_name {
+    color: blue;
+    transition: 0.1s;
+}
+
+.accordion_row input:active ~ .accordion_content .mem {
+    opacity: 0.5;
+}
+
+.mem_name {
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 2.5em;
+    color: blue;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.mem {
+    min-width: 10em;
+}
+
+@media (hover: hover) {
+    .accordion_row:hover .accordion_content {
+        max-height: 23em;
+        transition: 0.5s;
+    }
+    
+    .accordion_row:hover .cross {
+        transform: rotate(-45deg);
+        transition: 0.5s;
+    }
+
+    .accordion:hover .mem_name {
+        color: black;
+    }
+    
+    .accordion:hover .cross {
+        opacity: 1;
+        transition: 0.5s;
+    } 
+
+    .cross {
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .mem_name {
+        font-size: 1.75em;
+    }
+
+    .cross {
+        width: 1.75em;
+        height: 1.75em;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .mem_name {
+        font-size: 1.25em;
+    }
+
+    .cross {
+        width: 1.25em;
+        height: 1.25em;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .mem_name {
+        font-size: 1em;
+    }
+
+    .cross {
+        width: 1em;
+        height: 1em;
+    }
+}
